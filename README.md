@@ -2,6 +2,7 @@
 1. [about](#about)
 2. [features](#features)
 3. [how to use](#how-to-use)
+4. [controllers](#controllers)
 
 ## about
 this project was created using odoo 15. this project is expected to facilitate and assist companies, groups or individuals in collecting data or archiving data at pharmacies. 
