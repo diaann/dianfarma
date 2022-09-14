@@ -10,7 +10,6 @@ this project was created using odoo 15. this project is expected to facilitate a
 ## features
 there are several features that can be used, namely:
 1. menu produk
-this menu is divided into 4 sections or categories, there are 'kategori produk', 'jenis obat', 'golongan obat', and 'daftar produk'. this menu can be used to store data about any products. 
 
 **daftar produk**
 
@@ -21,14 +20,12 @@ this menu is divided into 4 sections or categories, there are 'kategori produk',
 ![image](https://user-images.githubusercontent.com/82097499/190169608-511565c1-7edc-4ec7-8f61-2adf7ade5821.png)
 
 2. menu karyawan
-this menu is divided into 2 categories, namely 'jabatan' and 'karyawan'. this menu can be used to store employee data.
 
 **karyawan**
 
 ![image](https://user-images.githubusercontent.com/82097499/190170821-5627cc37-ca29-4436-a501-ebc5bc5b5758.png)
 
 3. menu perusahaan
-this menu can be used to store company data that produces the product.
 
 **perusahaan**
 
@@ -41,7 +38,6 @@ this menu can be used to store company data that produces the product.
 ![image](https://user-images.githubusercontent.com/82097499/190172094-ac68742e-3f10-480e-a6c1-e6f29b80702d.png)
 
 5. menu transaksi
-this menu is used to store sales or transaction data.
 
 **transaksi**
 
@@ -58,9 +54,9 @@ sudo -u postgres createuser -s $USER
 ```
 createdb dianfarma
 ```
-5. create a runserver file then enter the following code in runserver file.
+5. create a runserver file then enter the following code in runserver file. don't forget to change <addons-path> and <folder-addonsproject-path>. 
 ```
-./odoo-bin --addons-path=/home/dian/odooproject/odoo/addons,/home/dian/odooproject/odoo/addonsproject --xmlrpc-port=8060 --db_port 5432 -d dianfarma --limit-memory-hard 0 --limit-time-real=10000 -u dianfarma
+./odoo-bin --addons-path=<addons-path>,<folder-addonsproject-path> --xmlrpc-port=8060 --db_port 5432 -d dianfarma --limit-memory-hard 0 --limit-time-real=10000 -u dianfarma
 ```
 6. run the runserver file.
 ```
