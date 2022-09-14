@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dianfarma_kategoriproduk,access.dianfarma.kategoriproduk,model_dianfarma_kategoriproduk,,1,1,1,1
+access_dianfarma_produk,access.dianfarma.produk,model_dianfarma_produk,,1,1,1,1
+access_dianfarma_golonganobat,access.dianfarma.golonganobat,model_dianfarma_golonganobat,,1,1,1,1
+access_dianfarma_jenisobat,access.dianfarma.jenisobat,model_dianfarma_jenisobat,,1,1,1,1
+access_dianfarma_jabatan,access.dianfarma.jabatan,model_dianfarma_jabatan,,1,1,1,1
+access_dianfarma_karyawan,access.dianfarma.karyawan,model_dianfarma_karyawan,,1,1,1,1
+access_dianfarma_perusahaan,access.dianfarma.perusahaan,model_dianfarma_perusahaan,,1,1,1,1
+access_dianfarma_membership,access.dianfarma.membership,model_dianfarma_membership,,1,1,1,1
+access_dianfarma_transaksi,access.dianfarma.transaksi,model_dianfarma_transaksi,,1,1,1,1
+access_dianfarma_detailtransaksi,access.dianfarma.detailtransaksi,model_dianfarma_detailtransaksi,,1,1,1,1

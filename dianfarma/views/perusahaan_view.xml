@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dianfarma.perusahaan tree view -->
+    <record id="dianfarma_perusahaan_view_tree" model="ir.ui.view">
+        <field name="name">dianfarma.perusahaan.view.tree</field>
+        <field name="model">dianfarma.perusahaan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="alamat"/>
+                <field name="no_telp"/>
+                <field name="produk_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- dianfarma.perusahaan form view -->
+    <record id="dianfarma_perusahaan_view_form" model="ir.ui.view">
+        <field name="name">Form Perusahaan</field>
+        <field name="model">dianfarma.perusahaan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="data_perusahaan" string="Data Perusahaan">
+                        <field name="name"/>
+                        <field name="alamat"/>
+                        <field name="no_telp"/>
+                    </group>
+                    
+                    <group name="detail_produksi" string="Produksi">
+                        <field name="produk_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- dianfarma.perusahaan action window -->
+    <record id="dianfarma_perusahaan_action" model="ir.actions.act_window">
+        <field name="name">Perusahaan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dianfarma.perusahaan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="dianfarma_perusahaan_menu_act" 
+        name="Perusahaan" 
+        parent="dianfarma_menu_root" 
+        action="dianfarma_perusahaan_action" 
+        sequence="30"/>
+
+</odoo>

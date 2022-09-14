@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dianfarma.produk tree view -->
+    <record id="dianfarma_produk_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Produk</field>
+        <field name="model">dianfarma.produk</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="kategoriproduk_id"/>
+                <field name="jenisobat_id"/>
+                <field name="golongan_id"/>
+                <field name="harga_jual"/>
+                <field name="stok"/>
+                <field name="perusahaan_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- dianfarma.produk form view -->
+    <record id="dianfarma_produk_view_form" model="ir.ui.view">
+        <field name="name">Form Produk</field>
+        <field name="model">dianfarma.produk</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <field name="image" widget="image" class="oe_left oe_avatar"/>
+
+                    <group name="detail" string="Detail Produk">
+                        <field name="name"/>
+                        <field name="harga_beli"/>
+                        <field name="harga_jual"/>
+                        <field name="no_izin"/>
+                        <field name="stok"/>
+                    </group>
+
+                    <group name="tags" string="Kategori, Jenis, dan Golongan">
+                        <field name="kategoriproduk_id"/>
+                        <field name="jenisobat_id"/>
+                        <field name="golongan_id"/>
+                    </group>
+
+                    <group name="produksi" string="Produsen">
+                        <field name="perusahaan_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- dianfarma.produk action window -->
+    <record id="dianfarma_produk_action" model="ir.actions.act_window">
+        <field name="name">Daftar Produk</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dianfarma.produk</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="dianfarma_produk_menu_act" 
+        name="Daftar Produk" 
+        parent="dianfarma_produk_menu_categ" 
+        action="dianfarma_produk_action" 
+        sequence="40"/>
+
+</odoo>

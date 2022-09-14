@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dianfarma.golonganobat tree view -->
+    <record id="dianfarma_golonganobat_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Golongan Obat</field>
+        <field name="model">dianfarma.golonganobat</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="kode_golongan"/>
+                <field name="jml_produk"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- dianfarma.golonganobat form view -->
+    <record id="dianfarma_golonganobat_view_form" model="ir.ui.view">
+        <field name="name">Form Golongan Obat</field>
+        <field name="model">dianfarma.golonganobat</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <group name="detail_golonganobat_produk" string="Detail Golongan">
+                        <field name="name"/>
+                        <field name="kode_golongan"/>
+                        <field name="jml_produk"/>
+                    </group>
+
+                    <group name="produk" string="Daftar Produk">
+                        <field name="produk_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- dianfarma.golonganobat action window -->
+    <record id="dianfarma_golonganobat_action" model="ir.actions.act_window">
+        <field name="name">Golongan Obat</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dianfarma.golonganobat</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="dianfarma_golonganobat_menu_act" 
+        name="Golongan Obat" 
+        parent="dianfarma_produk_menu_categ" 
+        action="dianfarma_golonganobat_action" 
+        sequence="30"/>
+
+</odoo>

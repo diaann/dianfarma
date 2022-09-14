@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dianfarma.kategoriproduk tree view -->
+    <record id="dianfarma_kategoriproduk_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Kategori Produk</field>
+        <field name="model">dianfarma.kategoriproduk</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="kode_kategori"/>
+                <field name="jml_produk"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- dianfarma.kategoriproduk form view -->
+    <record id="dianfarma_kategoriproduk_view_form" model="ir.ui.view">
+        <field name="name">Form Kategori Produk</field>
+        <field name="model">dianfarma.kategoriproduk</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="detail_kategori_produk" string="Detail Kategori">
+                        <field name="name"/>
+                        <field name="kode_kategori"/>
+                        <field name="jml_produk"/>
+                    </group>
+
+                    <group name="produk" string="Produk">
+                        <field name="produk_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- dianfarma.kategoriproduk action window -->
+    <record id="dianfarm_kategoriproduk_action" model="ir.actions.act_window">
+        <field name="name">Kategori Produk</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dianfarma.kategoriproduk</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="dianfarma_kategoriproduk_menu_act" 
+        name="Kategori" 
+        parent="dianfarma_produk_menu_categ" 
+        action="dianfarm_kategoriproduk_action" 
+        sequence="10"/>
+
+</odoo>

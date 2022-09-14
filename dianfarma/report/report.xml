@@ -1,0 +1,47 @@
+<odoo>
+
+    <!-- perusahaan -->
+    <record id="report_perusahaan_xlsx" model="ir.actions.report">
+        <field name="name">Produsen Excel</field>
+        <field name="model">dianfarma.perusahaan</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">dianfarma.report_perusahaan_xlsx</field>
+        <field name="report_file">dianfarma.report_perusahaan_xlsx</field>
+        <field name="binding_model_id" ref="model_dianfarma_perusahaan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- produk -->
+    <record id="report_produk_xlsx" model="ir.actions.report">
+        <field name="name">Produk Excel</field>
+        <field name="model">dianfarma.produk</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">dianfarma.report_produk_xlsx</field>
+        <field name="report_file">dianfarma.report_produk_xlsx</field>
+        <field name="binding_model_id" ref="model_dianfarma_produk"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- transaksi -->
+    <record id="report_transaksi_xlsx" model="ir.actions.report">
+        <field name="name">Transaksi Excel</field>
+        <field name="model">dianfarma.transaksi</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">dianfarma.report_transaksi_xlsx</field>
+        <field name="report_file">dianfarma.report_transaksi_xlsx</field>
+        <field name="binding_model_id" ref="model_dianfarma_transaksi"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- transaksi -->
+    <record id="report_transaksi_pdf" model="ir.actions.report">
+        <field name="name">Transaksi PDF</field>
+        <field name="model">dianfarma.transaksi</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dianfarma.report_transaksi_pdf</field>
+        <field name="report_file">dianfarma.report_transaksi_pdf</field>
+        <field name="binding_model_id" ref="model_dianfarma_transaksi"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

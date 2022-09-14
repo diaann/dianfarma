@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem 
+        id="dianfarma_menu_root" 
+        name="Dian Farma" 
+        sequence="10"/>
+    
+    <!-- This Menu Item Must have a parent -->
+    <menuitem 
+        id="dianfarma_produk_menu_categ" 
+        name="Produk" 
+        parent="dianfarma_menu_root" 
+        sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem 
+        id="dianfarma_karyawan_menu_categ" 
+        name="Karyawan" 
+        parent="dianfarma_menu_root" 
+        sequence="20"/>
+
+</odoo>

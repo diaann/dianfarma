@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dianfarma.transaksi tree view -->
+    <record id="dianfarma_transaksi_view_tree" model="ir.ui.view">
+        <field name="name">dianfarma.transaksi.view.tree</field>
+        <field name="model">dianfarma.transaksi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="nama_pelanggan"/>
+                <field name="tgl_transaksi"/>
+                <field name="total"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- dianfarma.transaksi form view -->
+    <record id="dianfarma_transaksi_view_form" model="ir.ui.view">
+        <field name="name">dianfarma.transaksi.view.form</field>
+        <field name="model">dianfarma.transaksi</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="detail_transaksi" string="Detail Transaksi">
+                        <field name="name"/>
+                        <field name="nama_pelanggan"/>
+                        <field name="tgl_transaksi"/>
+                        <field name="total"/>
+                    </group>
+
+                    <group name="daftar_produk" string="Daftar Produk">
+                        <field name="detailtransaksi_ids">
+                            <tree editable='bottom'>
+                                <field name="produk_id"/>
+                                <field name="harga_satuan"/>
+                                <field name="qty"/>
+                                <field name="subtotal" sum="Total"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- dianfarma.transaksi action window -->
+    <record id="dianfarma_transaksi_action" model="ir.actions.act_window">
+        <field name="name">Transaksi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dianfarma.transaksi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="dianfarma_transaksi_menu_act" 
+        name="Transaksi" 
+        parent="dianfarma_menu_root" 
+        action="dianfarma_transaksi_action" 
+        sequence="50"/>
+
+</odoo>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- dianfarma.karyawan tree view -->
+    <record id="dianfarma_karyawan_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Karyawan</field>
+        <field name="model">dianfarma.karyawan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="jenis_kelamin"/>
+                <field name="alamat"/>
+                <field name="no_tlp"/>
+                <field name="tgl_lahir"/>
+                <field name="jabatan_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- dianfarma.karyawan form view -->
+    <record id="dianfarma_karyawan_view_form" model="ir.ui.view">
+        <field name="name">Form Karyawan</field>
+        <field name="model">dianfarma.karyawan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="detail_karyawan" string="Detail Karyawan">
+                        <field name="name"/>
+                        <field name="jenis_kelamin"/>
+                        <field name="alamat"/>
+                        <field name="no_tlp"/>
+                        <field name="tgl_lahir"/>
+                    </group>
+
+                    <group name="jabatan_karyawan" string="Jabatan Karyawan">
+                        <field name="jabatan_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- dianfarma.karyawan action window -->
+    <record id="dianfarma_karyawan_action" model="ir.actions.act_window">
+        <field name="name">Karyawan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dianfarma.karyawan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="dianfarma_karyawan_menu_act" 
+        name="Karyawan" 
+        parent="dianfarma_karyawan_menu_categ" 
+        action="dianfarma_karyawan_action" 
+        sequence="20"/>
+
+</odoo>
