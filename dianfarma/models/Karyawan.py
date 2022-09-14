@@ -5,7 +5,9 @@ class Karyawan(models.Model):
     _name = 'dianfarma.karyawan'
     _description = 'New Description'
 
-    name = fields.Char(string='Nama Karyawan')
+    name = fields.Char(
+        string='Nama Karyawan',
+        required=True)
     jenis_kelamin = fields.Selection([
         ('Laki-laki', 'Laki-laki'),
         ('Perempuan', 'Perempuan'),

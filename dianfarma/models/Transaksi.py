@@ -1,5 +1,5 @@
 from odoo import api, fields, models
-# from odoo.exceptions import UserError, ValidationError
+from odoo.exceptions import UserError, ValidationError
 
 class Transaksi(models.Model):
     _name = 'dianfarma.transaksi'
@@ -56,6 +56,11 @@ class Transaksi(models.Model):
                     pass
         return record
 
+    _sql_constraints = [
+        ('nota_uqiue',
+        'unique (name)',
+        'no. nota yang inputkan telah ada.')
+    ]
 
 class DetailTransaksi(models.Model):
     _name = 'dianfarma.detailtransaksi'
@@ -93,11 +98,11 @@ class DetailTransaksi(models.Model):
                 ).write({'stok': record.produk_id.stok - record.qty})
         return record
     
-    # @api.constrains('qty')
-    # def check_quantity(self):
-    #     for rec in self:
-    #         if rec.qty < 1:
-    #             raise ValidationError("Tentukan quantity untuk {}".format(rec.produk_id.name))
-    #         elif (rec.produk_id.stok < rec.qty):
-    #             raise ValidationError("Stok untuk {} tidak mencukupi. Untuk saat ini, produk tersebut hanya tersedia sebanyak {}".format(rec.produk_id.name,rec.produk_id.stok))
+    @api.constrains('qty')
+    def check_quantity(self):
+        for rec in self:
+            if rec.qty < 1:
+                raise ValidationError("Tentukan quantity untuk produk {}".format(rec.produk_id.name))
+            elif (rec.produk_id.stok < rec.qty):
+                raise ValidationError("Stok untuk {} tidak mencukupi. Untuk saat ini, produk tersebut hanya tersedia sebanyak {}".format(rec.produk_id.name,rec.produk_id.stok))
 

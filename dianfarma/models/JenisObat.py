@@ -12,7 +12,8 @@ class JenisObat(models.Model):
         ('Sirup', 'Sirup'),
         ('Serbuk', 'Serbuk'),
         ('Salep', 'Salep'),
-        ('Obat Tetes', 'Obat Tetes')
+        ('Obat Tetes', 'Obat Tetes'),
+        ('Tablet Hisap', 'Tablet Hisap')
     ], string='Jenis Obat')
 
     kode_obat = fields.Char(string='Kode Jenis Obat')
@@ -33,6 +34,8 @@ class JenisObat(models.Model):
             self.kode_obat = 'JO06'
         elif self.name == 'Obat Tetes':
             self.kode_obat = 'JO07'
+        elif self.name == 'Tablet Hisap':
+            self.kode_obat = 'JO08'
     
     produk_ids  = fields.One2many(
         comodel_name='dianfarma.produk',
@@ -50,3 +53,9 @@ class JenisObat(models.Model):
             record.daftar = a
     
     daftar = fields.Char(string='Daftar Produk')
+
+    _sql_constraints = [
+        ('jenis_uqiue',
+        'unique (name)',
+        'Jenis obat yang Anda pilih telah tersedia.')
+    ]

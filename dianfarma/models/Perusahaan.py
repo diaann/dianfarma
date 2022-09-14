@@ -5,7 +5,9 @@ class Perusahaan(models.Model):
     _name = 'dianfarma.perusahaan'
     _description = 'New Description'
 
-    name = fields.Char(string='Nama Perusahaan')
+    name = fields.Char(
+        string='Nama Perusahaan',
+        required=True)
     alamat = fields.Char(string='Alamat')
     no_telp = fields.Char(string='No. Telepon')
     produk_ids = fields.One2many(

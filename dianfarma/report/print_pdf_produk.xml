@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_produk_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+            <!-- <t t-call="web.external_layout"> -->
+                <div class="page">
+                    <h2><b>DAFTAR PRODUK</b></h2>
+                    <t t-foreach="docs" t-as="d">
+                        <div class="row">
+                            <div class="col-4">Nama Produk:</div>
+                            <div class="col-8"><span t-field="d.name"/></div>
+                        </div>
+
+                        <t t-foreach="d.kategoriproduk_id" t-as="ds">
+                            <div class="row">
+                                <div class="col-4">Kategori Produk:</div>
+                                <div class="col-8"><span t-field="ds.name"/></div>
+                            </div>
+                        </t>
+
+                        <t t-foreach="d.jenisobat_id" t-as="ds">
+                            <div class="row">
+                                <div class="col-4">Jenis Obat:</div>
+                                <div class="col-8"><span t-field="ds.name"/></div>
+                            </div>
+                        </t>
+
+                        <t t-foreach="d.golongan_id" t-as="ds">
+                            <div class="row">
+                                <div class="col-4">Golongan Obat:</div>
+                                <div class="col-8"><span t-field="ds.name"/></div>
+                            </div>
+                        </t>
+
+                        <div class="row">
+                            <div class="col-4">Harga Produk:</div>
+                            <div class="col-8"><span t-field="d.harga_jual"/></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">Stok:</div>
+                            <div class="col-8"><span t-field="d.stok"/></div>
+                        </div>
+
+                        <t t-foreach="d.perusahaan_id" t-as="ds">
+                            <div class="row">
+                                <div class="col-4">Produsen:</div>
+                                <div class="col-8"><span t-field="ds.name"/></div>
+                            </div>
+                        </t>
+
+                        <div class="row">
+                            <div class="col-12"><br/></div>
+                        </div>
+                        
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

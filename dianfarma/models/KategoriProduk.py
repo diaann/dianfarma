@@ -59,3 +59,9 @@ class KategoriProduk(models.Model):
             record.daftar = a
     
     daftar = fields.Char(string='Daftar Produk')
+
+    _sql_constraints = [
+        ('kategori_uqiue',
+        'unique (name)',
+        'Kategori produk yang Anda pilih telah tersedia.')
+    ]

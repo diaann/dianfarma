@@ -9,3 +9,4 @@ access_dianfarma_perusahaan,access.dianfarma.perusahaan,model_dianfarma_perusaha
 access_dianfarma_membership,access.dianfarma.membership,model_dianfarma_membership,,1,1,1,1
 access_dianfarma_transaksi,access.dianfarma.transaksi,model_dianfarma_transaksi,,1,1,1,1
 access_dianfarma_detailtransaksi,access.dianfarma.detailtransaksi,model_dianfarma_detailtransaksi,,1,1,1,1
+access_dianfarma_produkdatang,access.dianfarma.produkdatang,model_dianfarma_produkdatang,,1,1,1,1

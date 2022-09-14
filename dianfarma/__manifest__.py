@@ -25,6 +25,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'wizard/produkdatang_wizard_view.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/menu.xml',
@@ -39,6 +40,7 @@
         'views/golonganobat_view.xml',
         'report/report.xml',
         'report/print_pdf_penjualan.xml',
+        'report/print_pdf_produk.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

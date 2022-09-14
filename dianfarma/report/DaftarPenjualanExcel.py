@@ -11,7 +11,7 @@ class PartnerXlsx(models.AbstractModel):
         bold = workbook.add_format({'bold': True})
         sheet.write(0, 0, str(self.tgl_lap))
         sheet.write(1, 0, 'No. Nota', bold)
-        sheet.write(1, 1, 'Nama Pembeli', bold)
+        sheet.write(1, 1, 'Nama Pelanggan', bold)
         sheet.write(1, 2, 'Tanggal Transaksi', bold)
         sheet.write(1, 3, 'Total Pembayaran', bold)
         sheet.write(1, 4, 'Daftar Barang', bold)

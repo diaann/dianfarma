@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- produkdatang form view -->
+    <record id="produkdatang_view_form_wizard" model="ir.ui.view">
+        <field name="name">Kedatangan Produk</field>
+        <field name="model">dianfarma.produkdatang</field>
+        <field name="arch" type="xml">
+            <form string="Form Kedatangan produk">
+                <group>
+                    <field name="produk_id"/>
+                    <field name="jumlah"/>
+                </group>
+                <footer>
+                    <button name="button_produkdatang" type="object" string="Input Produk" class="btn btn-warning"/>
+                    <button string="Cancel" special="cancel" class="btn btn-danger"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- produkdatang action window -->
+    <record id="produkdatang_action_wizard" model="ir.actions.act_window">
+        <field name="name">Kedatangan Produk</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dianfarma.produkdatang</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="produkdatang_view_form_wizard"/>
+        <field name="target">new</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="produkdatang_menu_action_wizard" 
+        name="Input Produk Datang" 
+        parent="dianfarma_menu_root" 
+        action="produkdatang_action_wizard" 
+        sequence="60"/>
+
+</odoo>

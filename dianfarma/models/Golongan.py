@@ -26,7 +26,7 @@ class Golongan(models.Model):
         elif self.name == 'Obat Keras':
             self.kode_golongan = 'GOL3'
         elif self.name == 'Obat Golongan Narkotika':
-            self.kode_golongan = 'GOL'
+            self.kode_golongan = 'GOL4'
         elif self.name == 'Obat Fitofarmaka':
             self.kode_golongan = 'GOL5'
         elif self.name == 'Obat Herbal Terstandar (OHT)':
@@ -51,3 +51,9 @@ class Golongan(models.Model):
             record.daftar = a
     
     daftar = fields.Char(string='Daftar Produk')
+
+    _sql_constraints = [
+        ('golongan_uqiue',
+        'unique (name)',
+        'Golongan obat yang Anda pilih telah tersedia.')
+    ]

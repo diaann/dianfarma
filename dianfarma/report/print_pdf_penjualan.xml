@@ -14,7 +14,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-4">Nama Pelangga:</div>
+                            <div class="col-4">Nama Pelanggan:</div>
                             <div class="col-8"><span t-field="d.nama_pelanggan"/></div>
                         </div>
 
