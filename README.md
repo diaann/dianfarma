@@ -53,7 +53,7 @@ this menu is used to store sales or transaction data.
 ```
 sudo -u postgres createuser -s $USER
 ```
-4. create a dianfarma database.
+4. create database.
 ```
 createdb dianfarma
 ```
@@ -66,3 +66,6 @@ createdb dianfarma
 ./runserver
 ```
 7. in the browser, open localhost:8060. for username and password enter 'admin'.
+
+## controllers
+for controllers, please please [click here](dianfarma/README.md)
