@@ -68,4 +68,4 @@ createdb dianfarma
 7. in the browser, open localhost:8060. for username and password enter 'admin'.
 
 ## controllers
-for controllers, please please [click here](dianfarma/README.md)
+for controllers, please [click here](dianfarma/README.md)
