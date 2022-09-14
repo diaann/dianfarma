@@ -54,9 +54,9 @@ sudo -u postgres createuser -s $USER
 ```
 createdb dianfarma
 ```
-5. create a runserver file then enter the following code in runserver file. don't forget to change <addons-path> and <folder-addonsproject-path>. 
+5. create a runserver file then enter the following code in runserver file. don't forget to change **addons-path** and **folder-addonsproject-path**. 
 ```
-./odoo-bin --addons-path=<addons-path>,<folder-addonsproject-path> --xmlrpc-port=8060 --db_port 5432 -d dianfarma --limit-memory-hard 0 --limit-time-real=10000 -u dianfarma
+./odoo-bin --addons-path=addons-path,folder-addonsproject-path --xmlrpc-port=8060 --db_port 5432 -d dianfarma --limit-memory-hard 0 --limit-time-real=10000 -u dianfarma
 ```
 6. run the runserver file.
 ```
