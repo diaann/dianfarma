@@ -17,6 +17,34 @@ class Transaksi(models.Model):
         comodel_name='dianfarma.detailtransaksi', 
         inverse_name='transaksi_id', 
         string='Detail Transaksi')
+    state = fields.Selection(
+        string='Status',
+        selection=[
+            ('Draft', 'Draft'),
+            ('Confirm', 'Confirm'),
+            ('Done', 'Done'),
+            ('Cancelled', 'Cancelled')],
+        required=True, readonly=True, default='Draft')
+
+    def action_confirm(self):
+        self.write({
+            'state' : 'Confirm'
+        })
+
+    def action_done(self):
+        self.write({
+            'state' : 'Done'
+        })
+
+    def action_cancel(self):
+        self.write({
+            'state' : 'Cancelled'
+        })
+
+    def action_draft(self):
+        self.write({
+            'state' : 'Draft'
+        })
 
     @api.depends('detailtransaksi_ids')
     def _compute_total(self):
@@ -26,14 +54,17 @@ class Transaksi(models.Model):
             rec.total = a
 
     def unlink(self):
-        if self.detailtransaksi_ids:
-            a=[]
-            for rec in self:
-                a = self.env['dianfarma.detailtransaksi'].search([('transaksi_id','=',rec.id)])
-                print(a)
-            for ob in a:
-                print(str(ob.produk_id.name) + ' ' + str(ob.qty))
-                ob.produk_id.stok += ob.qty
+        if self.filtered(lambda line: line.state != 'Draft'):
+            raise ValidationError("Data tidak dapat dihapus karena status data tersebut bukan draft.")
+        else:
+            if self.detailtransaksi_ids:
+                a=[]
+                for rec in self:
+                    a = self.env['dianfarma.detailtransaksi'].search([('transaksi_id','=',rec.id)])
+                    print(a)
+                for ob in a:
+                    print(str(ob.produk_id.name) + ' ' + str(ob.qty))
+                    ob.produk_id.stok += ob.qty
         record = super(Transaksi,self).unlink()
 
     def write(self,vals):
