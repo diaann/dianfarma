@@ -13,6 +13,7 @@
                 <field name="no_tlp"/>
                 <field name="tgl_daftar"/>
                 <field name="masa_berlaku"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>
@@ -23,13 +24,21 @@
         <field name="model">dianfarma.membership</field>
         <field name="arch" type="xml">
             <form string="">
+                <header>
+                    <button string="Lunas" name="action_lunas" type="object" class="oe_highlight" states="Belum Bayar"/>
+                    <button string="Expired" name="action_expired" type="object" class="btn btn-warning" states="Lunas"/>
+                    <button string="Batal" name="action_batal" type="object" class="btn btn-danger" states="Belum Bayar" confirm="Are you sure?"/>
+                    <button string="Daftar Lagi" name="action_belumbayar" type="object" class="oe_highlight" states="Batal" confirm="Are you sure?"/>
+                    <button string="Daftar Lagi" name="action_belumbayar" type="object" class="oe_highlight" states="Expired" confirm="Are you sure?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="Belum Bayar,Lunas,Expired"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="tgl_daftar"/>
                         <field name="alamat"/>
                         <field name="jenis_kelamin"/>
                         <field name="no_tlp"/>
-                        <field name="tgl_daftar"/>
                         <field name="masa_berlaku"/>
                     </group>
                 </sheet>
