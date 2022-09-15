@@ -15,6 +15,7 @@ class PartnerXlsx(models.AbstractModel):
         sheet.write(1, 2, 'Tanggal Transaksi', bold)
         sheet.write(1, 3, 'Total Pembayaran', bold)
         sheet.write(1, 4, 'Daftar Barang', bold)
+        sheet.write(1, 5, 'Quantity', bold)
         row = 2
         col = 0
         for obj in transaksi:
@@ -23,7 +24,7 @@ class PartnerXlsx(models.AbstractModel):
             sheet.write(row, col+1, obj.nama_pelanggan)
             sheet.write(row, col+2, str(obj.tgl_transaksi))
             sheet.write(row, col+3, obj.total)
-            for produk in obj.detailtransaksi_ids.produk_id:
-                sheet.write(row, col+4, produk.name)
-                col += 1
-            row += 1
+            for produk in obj.detailtransaksi_ids:
+                sheet.write(row, col+4, produk.produk_id.name)
+                sheet.write(row, col+5, produk.qty)
+                row += 1

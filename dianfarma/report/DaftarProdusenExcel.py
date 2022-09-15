@@ -23,5 +23,4 @@ class PartnerXlsx(models.AbstractModel):
             sheet.write(row, col+2, obj.no_telp)
             for produk in obj.produk_ids:
                 sheet.write(row, col+3, produk.name)
-                col += 1
-            row += 1
+                row += 1
